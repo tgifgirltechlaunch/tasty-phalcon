@@ -1,0 +1,41 @@
+<br/>
+
+<!-- Search Form -->
+<div class="row">
+    <div class="col-sm-12">
+        <form action="/recipes/index" method="get">
+            <div class="input-group">
+                <input class="form-control py-2" type="search" name="name" value="<?= $name ?>" id="search">
+                <span class="input-group-append">
+                    <a href="/recipes" class="btn btn-outline-secondary" type="button">X</i></a>
+                </span>
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br/>
+
+<?php if(count($recipes) <= 0) { ?>
+    <div class="alert alert-warning" role="alert">
+        We could not find any recipe that matches your search <b><?= $name ?></b>
+    </div>
+<?php } ?>
+
+<div class="row">
+    <?php foreach ($recipes as $recipe) { ?>
+        <div class="card col-sm-3">
+            <img class="card-img-top" style="height:200px;" src="<?= "/img/" . $recipe->picture ?>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><?= $recipe->name ?></h5>
+                <p>Cooking time: <?= $recipe->time ?></p>
+                <p class="card-text"><?= $recipe->ingredients ?></p>
+                <p>Times viewed: <?= $recipe->views ?></p>
+                <a href="/recipes/recipe?id=<?= $recipe->id ?>" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+    <?php } ?>
+</div>

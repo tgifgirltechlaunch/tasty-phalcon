@@ -1,0 +1,30 @@
+<form action="/admin/<?= $submit ?>" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<?= $recipe->name ?>" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="time">Cooking time</label>
+        <input type="number" class="form-control" id="time" name="time" value="<?= $recipe->time ?>" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="picture">Picture</label>
+        <input type="file" class="form-control" id="picture" name="picture"/>
+    </div>
+
+    <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <textarea class="form-control" id="ingredients" name="ingredients" placeholder="Enter a comma separated list of ingredients" rows="3" required><?= $recipe->ingredients ?></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="instructions">Instructions</label>
+        <textarea class="form-control" id="instructions" name="instructions" rows="3" required><?= $recipe->instructions ?></textarea>
+    </div>
+
+    <input type="hidden" name="id" value="<?= $recipe->id ?>"/>
+
+    <input class="btn btn-primary" type="submit" value="Add" />
+</form>

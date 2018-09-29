@@ -1,0 +1,68 @@
+<form class="form-horizontal" role="form" method="POST" action="/login/signupSubmit" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Register New User</h2>
+                <hr>
+                <div style="padding-bottom:40px; color: red; font-size: 16px; font-weight: 600;"><?= isset($_GET["message"]) ? $_GET["message"] : "" ?></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="name" class="form-control" placeholder="Name" id="name" required autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input type="email" name="email" class="form-control" placeholder="Email" id="email" required autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input type="password" name="password" class="form-control" placeholder="Password" id="password" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem">
+                        <i class="fas fa-redo-alt"></i>
+                        </div>
+                        <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" id="confirmpassword" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-camera"></i></div>
+                        <input type="file" class="form-control" id="picture" name="picture"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary" type="submit" value="Sign Up" />
+            </div>
+        </div>
+    </form>
+
+    <div style="padding-top:30px;">Already have an account? <a href="/login">Log In</a></div>

@@ -1,0 +1,20 @@
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Time</th>
+        <th scope="col">Ingredients</th>
+        <th scope="col">Actions</th>
+    </tr>
+</thead>
+<tbody>
+    <?php foreach ($recipes as $recipe) { ?>
+    <tr>
+        <td><?= $recipe->name ?></td>
+        <td><?= $recipe->time ?></td>
+        <td><?= $recipe->ingredients ?></td>
+        <td><a class="btn btn-small" href="/admin/edit?id=<?= $recipe->id ?>">Edit</a></td>
+    </tr>
+    <?php } ?>
+</tbody>
+</table>
