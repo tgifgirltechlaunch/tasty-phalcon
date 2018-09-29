@@ -73,7 +73,7 @@ class AdminController extends Controller
         $recipe->create();
 
         // redirect to the list of recipes
-        $this->response->redirect('/admin/recipes');
+        $this->response->redirect('/recipes');
 		$this->view->disable();
     }
 
@@ -126,7 +126,7 @@ class AdminController extends Controller
         $recipe->save();
 
         // redirect to the list of recipes
-        $this->response->redirect('/admin/recipes');
+        $this->response->redirect('/recipes');
 		$this->view->disable();
     }
 }

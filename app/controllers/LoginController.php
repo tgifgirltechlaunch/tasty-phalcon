@@ -32,7 +32,7 @@ class LoginController extends Controller
             $this->session->set('user', $obj);
 
             // redirect to the admin
-            $this->response->redirect('/admin');
+            $this->response->redirect('./admin');
         } else {
             // redirect to login with error
             $this->response->redirect('/login/index?error=1');
@@ -98,7 +98,7 @@ class LoginController extends Controller
         $this->session->destroy();
 
         // redirect to login page
-        $this->response->redirect('/login');
+        $this->response->redirect('/');
     }
 
     public function signupAction() 

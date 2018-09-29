@@ -28,13 +28,13 @@
 <div class="row">
     <?php foreach ($recipes as $recipe) { ?>
         <div class="card col-sm-3">
-            <img class="card-img-top" style="height:200px;" src="<?= "/img/" . $recipe->picture ?>" alt="Card image cap">
+            <img class="card-img-top" style="height:200px;" src="<?= "/tasty/img/" . $recipe->picture ?>" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title"><?= $recipe->name ?></h5>
                 <p>Cooking time: <?= $recipe->time ?></p>
                 <p class="card-text"><?= $recipe->ingredients ?></p>
                 <p>Times viewed: <?= $recipe->views ?></p>
-                <a href="/recipes/recipe?id=<?= $recipe->id ?>" class="btn btn-primary">See more</a>
+                <a href="/tasty/recipes/recipe?id=<?= $recipe->id ?>" class="btn btn-primary">See more</a>
             </div>
         </div>
     <?php } ?>

@@ -33,7 +33,7 @@ $di->set('view', function () {
 // Setup a base URI
 $di->set('url', function () {
     $url = new UrlProvider();
-    $url->setBaseUri('/');
+    $url->setBaseUri('.');
     return $url;
 });
 
