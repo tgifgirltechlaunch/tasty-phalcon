@@ -57,8 +57,8 @@ class AdminController extends Controller
         if ($this->request->hasFiles()) {
             // save file to the directory and database
             foreach ($this->request->getUploadedFiles() as $file) {
-                $picture = md5($file->getName() . time()) . "." . $file->getExtension ();
-                $file->moveTo($_SERVER['DOCUMENT_ROOT']  . "/img/" . $picture);
+                $picture = md5($file->getName() . time()) . "." . $file->getExtension();
+                $file->moveTo($_SERVER['DOCUMENT_ROOT']  . "/tasty/public/img/" . $picture);
             }
         } 
 
@@ -110,11 +110,11 @@ class AdminController extends Controller
                 if(empty($file->getExtension())) break;
 
                 // delete old image file
-                unlink($_SERVER['DOCUMENT_ROOT']  . "/img/" . $recipe->picture);
+                unlink($_SERVER['DOCUMENT_ROOT']  . "/tasty/public/img/" . $recipe->picture);
 
                 // add new image
                 $recipe->picture = md5($file->getName() . time()) . "." . $file->getExtension();
-                $file->moveTo($_SERVER['DOCUMENT_ROOT']  . "/img/" . $recipe->picture);
+                $file->moveTo($_SERVER['DOCUMENT_ROOT']  . "/tasty/public/img/" . $recipe->picture);
             }
         }
 

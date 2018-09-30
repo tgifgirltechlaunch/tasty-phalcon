@@ -68,7 +68,7 @@ class LoginController extends Controller
                     foreach ($this->request->getUploadedFiles() as $file) {
                         
                         $picture = md5($file->getName() . time()) . "." . $file->getExtension ();
-                        $file->moveTo($_SERVER['DOCUMENT_ROOT']  . "/img/" . $picture);
+                        $file->moveTo($_SERVER['DOCUMENT_ROOT']  . "/tasty/public/img/" . $picture);
                     }
                 }
 
@@ -78,7 +78,7 @@ class LoginController extends Controller
 
                 if($savedSuccessfully) {
                     // redirect to the admin
-                    $this->response->redirect('/admin');
+                    $this->response->redirect('/');
                 } else {
                     $messages = $auser->getMessages();
                     echo "Sorry, the following problems were generated: ";
